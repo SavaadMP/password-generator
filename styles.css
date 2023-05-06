@@ -29,7 +29,7 @@ section {
 }
 @media only screen and (max-width: 900px) {
   .container {
-    width: 800px;
+    width: 750px;
   }
 }
 .container button {
