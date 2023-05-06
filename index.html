@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <div class="pw-area">
+        <input type="text" id="password" class="password" readonly />
+        <button id="submit">Copy</button>
+      </div>
+
+      <div class="pw-length">
+        <input type="range" />
+        <span>8</span>
+      </div>
+
+      <div class="pw-configuration">
+        <div class="lowercase">
+          <span>include lowercase (a-z)</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="uppercase">
+          <span>include uppercase (A-Z)</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="numbers">
+          <span>include numbers (0-9)</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="characters">
+          <span>include characters (#-%)</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <button class="button" onclick="generatePassword()">
+        Generate Password
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
