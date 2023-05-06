@@ -12,3 +12,37 @@ let charArray = ["!", "@", "#", "$", "%", "&", "?", "=", "-", "*", "^", ":"];
 passwordRange.addEventListener("change", () => {
   passwordLength.innerHTML = passwordRange.value;
 });
+
+for (let i = 97; i < 123; i++) {
+  let letter = String.fromCharCode(i);
+  lowercaseArray.push(letter);
+  uppercaseArray.push(letter.toUpperCase());
+}
+
+showPasswordBtn.addEventListener("click", () => {
+  let passwordLength = passwordRange.value;
+  let lowercase = document.querySelector(".lowercaseCheck").checked;
+  let uppercase = document.querySelector(".uppercaseCheck").checked;
+  let numbers = document.querySelector(".numbersCheck").checked;
+  let character = document.querySelector(".charactersCheck").checked;
+
+  let passwordSource = [
+    ...(lowercase ? lowercaseArray : []),
+    ...(uppercase ? uppercaseArray : []),
+    ...(numbers ? numberArray : []),
+    ...(character ? charArray : []),
+  ];
+
+  if (passwordSource.length === 0) {
+    passwordField.value = "";
+    return;
+  }
+
+  let password = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+    let randomNumber = Math.floor(Math.random() * passwordSource.length);
+    password += passwordSource[randomNumber];
+  }
+  passwordField.value = password;
+});
