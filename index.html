@@ -13,7 +13,7 @@
       <div class="container">
         <h1>Password Generator</h1>
         <div class="pw-area">
-          <input type="text" id="password" class="password" readonly />
+          <input type="text" id="password" class="passwordField" readonly />
           <button id="submit"><img src="copy.png" alt="copy" /></button>
         </div>
 
@@ -22,9 +22,15 @@
 
           <div>
             <div>
-              <input type="range" />
+              <input
+                type="range"
+                class="passwordRange"
+                min="6"
+                max="16"
+                value="8"
+              />
             </div>
-            <span>12</span>
+            <span class="passwordLength">8</span>
           </div>
         </div>
 
@@ -66,9 +72,7 @@
           </div>
         </div>
 
-        <button class="button" onclick="generatePassword()">
-          Generate Password
-        </button>
+        <button class="showPasswordBtn">Generate Password</button>
       </div>
     </section>
 
