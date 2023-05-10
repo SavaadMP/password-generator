@@ -2,6 +2,7 @@ let passwordField = document.querySelector(".passwordField");
 let passwordRange = document.querySelector(".passwordRange");
 let passwordLength = document.querySelector(".passwordLength");
 let showPasswordBtn = document.querySelector(".showPasswordBtn");
+let copyButton = document.querySelector(".copyButton");
 
 let uppercaseArray = [];
 let lowercaseArray = [];
@@ -45,4 +46,13 @@ showPasswordBtn.addEventListener("click", () => {
     password += passwordSource[randomNumber];
   }
   passwordField.value = password;
+});
+
+copyButton.addEventListener("click", () => {
+  passwordField.select();
+  passwordField.setSelectionRange(0, 99999);
+
+  console.log(passwordField.value);
+  navigator.clipboard.writeText(passwordField.value);
+  alert("Copied to clipboard");
 });
